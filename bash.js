@@ -34,6 +34,14 @@ process.stdin.on('data', function (data) {
       commands.head(cmd);
     }
 
+    if (cmd.slice(0,4) === "tail") {
+      commands.tail(cmd);
+    }
+
+    if (cmd.slice(0,2) === "lc") {
+      commands.lc(cmd);
+    }
+
     process.stdout.write('You typed: ' + cmd);
     process.stdout.write('\nprompt > ');
 });

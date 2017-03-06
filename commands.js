@@ -70,6 +70,41 @@ var head = function(cmd) {
   })
 }
 
+var tail = function(cmd) {
+  var file = cmd.slice(5);
+  var fileTail = [];
+  var count = 0;
+
+  fs.readFile(file, (err, data) => {
+    if (err) throw err;
+    var arr = data.toString().split("\n");
+    while (count < 5) {
+      fileTail.pop(arr[arr.length-1]);
+      arr.pop();
+      count++;
+    }
+
+    console.log(fileTail.reverse().join('\n'));
+  })
+}
+
+var lc = function(cmd) {
+  var file = cmd.slice(3);
+  var fileTail = [];
+  var count = 0;
+
+  fs.readFile(file, (err, data) => {
+    if (err) throw err;
+    var arr = data.toString().split("\n");
+    console.log(arr.length);
+  })
+}
+
+var sort = function() {
+  var file = cmd.slice(5);
+
+}
+
 module.exports = {
   pwd: pwd,
   date: date,
@@ -77,5 +112,7 @@ module.exports = {
   echo: echo,
   ver: ver,
   cat: cat,
-  head: head
+  head: head,
+  tail: tail,
+  lc: lc
 }
