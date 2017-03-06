@@ -51,17 +51,6 @@ var ls = function(done) {
     done(output);
   });
 }
-// var commands = {
-//   ls: function(file, done) {
-//     var output = "";
-//     fs.readdir('.', function(err, files) {
-//       files.forEach(function(file) {
-//         output += file.toString() + "\n";
-//       })
-//       done(output);
-//     });
-//   }
-// }
 
 var cat = function(cmd, done) {
   var file = cmd.slice(4);
