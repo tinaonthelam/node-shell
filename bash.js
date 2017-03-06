@@ -18,6 +18,22 @@ process.stdin.on('data', function (data) {
       commands.ls();
     }
 
+    if (cmd.slice(0,4) === "echo") {
+      commands.echo(cmd);
+    }
+
+    if (cmd.slice(0,3) === "ver") {
+      commands.ver();
+    }
+
+    if (cmd.slice(0,3) === "cat") {
+      commands.cat(cmd);
+    }
+
+    if (cmd.slice(0,4) === "head") {
+      commands.head(cmd);
+    }
+
     process.stdout.write('You typed: ' + cmd);
     process.stdout.write('\nprompt > ');
 });
